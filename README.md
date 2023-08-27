@@ -27,3 +27,4 @@
     - ReLU: $0$ if $z<0$, $1$ if $z>0$
     - LeakyReLU: $1$ if $z>0$, some small value if $z<0$.
 11. BP for a single neuron (with two weights $w_1$ and $w_2$) doing logistic regression:  $dJ/dw_1=(dJ/dy)(dy/dz)(dz/dw_1)$ where, $dJ/dy=-(y_g/y)+((1-y_g)/(1-y))$ and $dy/dz=y(1-y)$ and $dz/dw_1=x_1$. Here, $x_1$, $y_g$ are given and $y$ are known from forward propagation. Therefore, $w_1=w_1 + (LR)-dJ/dw1$ can be calculated. Similarly, $w_2$ (using, $dJ/dw_2=x_2(dJ/dz)$) and $b$ (using, $dJ/db=dJ/dz$) can be calculated. $dJ/dz=(dJ/dy)(dy/dz)$ can be calculated as above.
+12. 
