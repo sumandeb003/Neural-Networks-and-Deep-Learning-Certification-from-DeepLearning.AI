@@ -43,4 +43,4 @@
         -  **tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
         -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
-    - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$**  Remember $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
+    - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
