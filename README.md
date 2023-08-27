@@ -38,4 +38,4 @@
 15. **NN is stacking multiple logistic regression one after another.**
     - No. of layers in NN=no. of layers of neurons
     - The inputs to the NN are considered as 0-th layer of activations
-17.  $tanh z = (e^z-e^{-z})/ (e^z+e^{-z})=2*\sigma(z) - 1$
+17.  $tanh(z) = (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(z) - 1$
