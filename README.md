@@ -8,4 +8,5 @@
       - **Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
       - **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $n(L)$ **X** $n(L-1)$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
       - **The above vectors - input activation and output of a NN layer - can be concatenated horizontally for all training samples to form columns of a matrix.**
+7. Non-convex optimization => multiple local minima.
 8. 
