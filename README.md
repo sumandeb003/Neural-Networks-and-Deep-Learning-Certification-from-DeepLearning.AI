@@ -33,5 +33,9 @@
         -  SGD often needs a small number of passes through the dataset to reach a good or good enough set of coefficients, e.g. 1-to-10 passes through the dataset.
     - In mini-batch GD, the training set is divided into subsets called mini-batches. The errors for all the samples in a mini-batch are averaged and used to compute the weight updates.The weights are updated with this average error at the end of a batch. This is done for each mini-batch in the training set.
         -  Mini-batch gradient descent combines concepts from both batch gradient descent and stochastic gradient descent. It splits the training dataset into small batch sizes and performs updates on each of those batches. This approach strikes a balance between the computational efficiency of batch gradient descent and the speed of stochastic gradient descent.
-13. 
-14. 
+13. My thoughts:  Batch GD is faster compared to  SGD as the weights are updated only once per epoch. In case of multi-layered NNs, it means that backpropagation is done for each training sample. That's time consuming for each epoch.
+14. Whenever possible, avoid using 'for' loops and nested 'for' loops in code. Use Vectors (1-D matrices) instead.
+15. **NN is stacking multiple logistic regression one after another.**
+    - No. of layers in NN=no. of layers of neurons
+    - The inputs to the NN are considered as 0-th layer of activations
+17.  $tanh z = (e^z-e^{-z})/ (e^z+e^{-z})=2*\sigma(z) - 1$
