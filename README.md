@@ -5,7 +5,7 @@
 4.  **Logistic regression is an algorithm for binary classification. Logistic regression is done by a single neuron with sigmoid activation function (sigma).** Forward Propagation in logistic regression: $z=w_1x_1+w_2x_2+b$; $y=sigma(z)$;
 5.  **The R, G, B matrices of an image can be unrolled and concatenated in the form of long column matrix. This 1-D matrix can be input features to a NN.**
 6.  Dimensional Analysis:
-7.      *Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
+   * **Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
 8.      **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $n(L)$ **X** $n(L-1)$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
 9.      **The above vectors - input activation and output of a NN layer - can be concatenated horizontally for all training samples to form columns of a matrix.**
 8. 
