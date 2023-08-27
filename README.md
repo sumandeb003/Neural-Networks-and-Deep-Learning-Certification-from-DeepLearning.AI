@@ -39,7 +39,7 @@
 15. **NN is stacking multiple logistic regression one after another.**
     - No. of layers in NN=no. of layers of neurons
     - The inputs to the NN are considered as 0-th layer of activations
-17.  Activation functions:
+17. Activation functions:
     - **$tanh(z)$** $= (e^z-e^{-z})/ (e^z+e^{-z})=$**$2\sigma(z) - 1$**
         -  **tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
         -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
