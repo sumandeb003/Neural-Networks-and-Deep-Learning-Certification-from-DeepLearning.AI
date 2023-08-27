@@ -27,4 +27,7 @@
     - ReLU: $0$ if $z<0$, $1$ if $z>0$
     - LeakyReLU: $1$ if $z>0$, some small value if $z<0$.
 11. BP for a single neuron (with two weights $w_1$ and $w_2$) doing logistic regression:  $dJ/dw_1=(dJ/dy)(dy/dz)(dz/dw_1)$ where, $dJ/dy=-(y_g/y)+((1-y_g)/(1-y))$ and $dy/dz=y(1-y)$ and $dz/dw_1=x_1$. Here, $x_1$, $y_g$ are given and $y$ are known from forward propagation. Therefore, $w_1=w_1 + (LR)-dJ/dw1$ can be calculated. Similarly, $w_2$ (using, $dJ/dw_2=x_2(dJ/dz)$) and $b$ (using, $dJ/db=dJ/dz$) can be calculated. $dJ/dz=(dJ/dy)(dy/dz)$ can be calculated as above.
-12. 
+12. Gradient Descent is of 3 types: `Batch`, `Stochastic`, `Mini-batch`.
+    - Batch gradient descent sums the error for each point in a training set, updating the model only after all training examples have been evaluated.
+    - If the GD is applied to update the weights for each training sample, its stochastic GD (SGD). Because the coefficients are updated after every training instance, the updates will be noisy jumping all over the place, and so will the corresponding cost function. Its frequent updates can result in noisy gradients, but this can also be helpful in escaping the local minimum and finding the global one.
+    - In mini-batch GD, the weights are updated - using GD - for a subset of training samples. The training set is divided into multiple subsets and the weights are updated once for every subset.
