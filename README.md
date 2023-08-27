@@ -47,7 +47,7 @@
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $max(0,z)$**
         - **ReLU is increasingly the default choice of activation function for hidden neurons in an NN.**
-        - One disadvantage of ReLU is that it's derivative is 0 for negative $z$, leading to the **dying ReLU problem** and to almost stationary GD i.e., no update of weights and such a dead ReLU outputs only 0. **$\color{red}{\textrm{The gradient for -ve z is 0 but in practice, enough of the hidden units have z>0 and so, the learning can still progress well.}}$**
+        - One disadvantage of ReLU is that it's derivative is 0 for negative $z$, leading to the **dying ReLU problem** and to almost stationary GD i.e., no update of weights and such a dead ReLU outputs only 0. **$\color{red}{\textrm{The gradient for -ve} z \textrm{is 0 but in practice, enough of the hidden units have z>0 and so, the learning can still progress well.}}$**
     - To overcome this, we have LeakyReLU ($=(0.01z, z)$) which has a slight slope for negative $z$. 
         - **$\color{red}{\textrm{Leaky ReLU usually works better than ReLU}}$. However, either is fine. Leaky ReLU is not used much in practice.**
 
