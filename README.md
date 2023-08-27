@@ -45,4 +45,8 @@
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $max(0,z)$**
+        - **ReLU is increasingly the default choice of activation function for hidden neurons in a NN.**
+        - One disadvantage of ReLU is that its derivative is 0 for -ve z - leading to the dying ReLU problem in some cases - leading to almost stationary GD and hence, no update of weights and such a dead ReLU outputs only 0. In practice, this still works fine.
+    - To overcome this, we have LeakyReLU ($= max(0.01z,z)$) which has a slight slope for -ve $z$.
+        - **Leaky ReLU usually works better than ReLU. However, either is fine. Leaky ReLU is not used much in practice.**
 
