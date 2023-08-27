@@ -17,7 +17,8 @@
         - **Here, the activation function is the combination ($\hat{y}^y(1-\hat{y})^{(1-y)}$) of the probability of y to be 1 ($=\hat{y}$) - and the probability of y to be 0 ($=1-\hat{y}$)**
         - **Derivation of the above cost function can be found [here](https://www.youtube.com/watch?v=k_S5fnKjO-4&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=24&ab_channel=DeepLearningAI).**
 7. Gradient descent (GD) works by moving downward toward the pits or valleys in the graph ($J$ vs $w$ vs $b$; $J = f(y_g, y)$; $y_g$: ground truth; $y$: computed output) to find the minimum value.  **The gradient is a vector ($-dJ/dw$) that points in the direction of the steepest INCREASE of the function at a specific point. GD works by moving (step size=LR) in the opposite direction ($-dJ/dw$) of the gradient** allows the algorithm to gradually descend towards lower values of the function, and eventually reaching to the minimum of the function. BTW, "derivative" of a function at a point just means "slope" of the function at that point.
-8. **GD for logistic regression: $w_i=w_i + (LR)(-dJ/dw_i)$ where, $dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)$.**
+    - Back propagation (BP) implements gradient descent.
+9. **GD for logistic regression: $w_i=w_i + (LR)(-dJ/dw_i)$ where, $dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)$.**
     - **Value of $dJ/dw_i$ is different for different training samples - $z$, $y$.**
     - **Average all the values in the training set or in a mini-batch.**
 10. $dy/dz$ for different activation functions(y):
