@@ -6,7 +6,7 @@
     - **Logistic regression is done by a single neuron with sigmoid activation function ($\sigma$).**
     - **Forward Propagation in logistic regression: $z=w_1x_1+w_2x_2+b$; $y=\sigma(z)$**
     - **Non-convex optimization => multiple local minima. Squared error is not a suitable loss function for logistic regression because it is non-convex.**
-    - **Preferred cost function ($J$) for logistic regression: Average of $-[(y_g)(log y)+(1-(y_g))log(1-y)]$ for all training samples. Gradient descent is used to find weights that reduce this cost function.  Here, $y_g$ = ground truth, $y$ = computed output. Derivation of the above cost function can be found [here](https://www.youtube.com/watch?v=k_S5fnKjO-4&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=24&ab_channel=DeepLearningAI)**
+    - **Preferred cost function ($J$) for logistic regression: Average of $-[(y_g)(log y)+(1-(y_g))log(1-y)]$ for all training samples. Gradient descent is used to find weights that reduce this cost function.  Here, $y_g$ = ground truth, $y$ = computed output. Derivation of the above cost function can be found [here](https://www.youtube.com/watch?v=k_S5fnKjO-4&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0&index=24&ab_channel=DeepLearningAI).**
 6.  **The R, G, B matrices of an image can be unrolled and concatenated in the form of long column matrix. This 1-D matrix can be input features to a NN.**
 7.  Dimensional Analysis:
       - **Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
