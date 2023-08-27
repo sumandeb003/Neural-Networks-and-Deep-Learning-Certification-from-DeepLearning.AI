@@ -47,6 +47,6 @@
     - One of the most popular activation functions: **ReLU = $max(0,z)$**
         - **ReLU is increasingly the default choice of activation function for hidden neurons in an NN.**
         - One disadvantage of ReLU is that it's derivative is 0 for negative $z$, leading to the **dying ReLU problem** and to almost stationary GD i.e., no update of weights and such a dead ReLU outputs only 0. In practice, this still works fine.
-18. To overcome this, we have LeakyReLU ($= max(0.01z,z)$) which has a slight slope for negative $z$. 
+    - To overcome this, we have LeakyReLU ($= max(0.01z,z)$) which has a slight slope for negative $z$. 
         - **Leaky ReLU usually works better than ReLU. However, either is fine. Leaky ReLU is not used much in practice.**
 
