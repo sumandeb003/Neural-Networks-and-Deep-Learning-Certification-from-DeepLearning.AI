@@ -30,4 +30,8 @@
 12. Gradient Descent is of 3 types: `Batch`, `Stochastic`, `Mini-batch`.
     - Batch gradient descent averages the errors for each sample in a training set, updating the model only after all training examples have been evaluated.
     - If the weights are updated for each training sample, its stochastic GD (SGD). **Because the coefficients are updated after every training instance, the updates will be noisy jumping all over the place, and so will the corresponding cost function. Its frequent updates can result in noisy gradients, but this can also be helpful in escaping the local minimum and finding the global one.**
+        -  SGD often needs a small number of passes through the dataset to reach a good or good enough set of coefficients, e.g. 1-to-10 passes through the dataset.
     - In mini-batch GD, the training set is divided into subsets called mini-batches. The errors for all the samples in a mini-batch are averaged and used to compute the weight updates.The weights are updated with this average error at the end of a batch. This is done for each mini-batch in the training set.
+        -  Mini-batch gradient descent combines concepts from both batch gradient descent and stochastic gradient descent. It splits the training dataset into small batch sizes and performs updates on each of those batches. This approach strikes a balance between the computational efficiency of batch gradient descent and the speed of stochastic gradient descent.
+13. 
+14. 
