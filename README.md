@@ -20,8 +20,8 @@
 8. **GD for logistic regression: $w_i=w_i + (LR)(-dJ/dw_i)$ where, $dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)$.**
     - **Value of $dJ/dw_i$ is different for different training samples - $z$, $y$.**
     - **Average all the values in the training set or in a mini-batch.**
-10. dy/dz for different activation functions(y):
-    - sigmoid function: z(1-z)
-    - tanh: 1-z^2
-    - ReLU: 0 if z<0, 1 if z>0
-    - LeakyReLU: 1 if z>0, some small value if z<0.
+10. $dy/dz$ for different activation functions(y):
+    - sigmoid function: $z(1-z)$
+    - tanh: $1-z^2$
+    - ReLU: $0$ if $z<0$, $1$ if $z>0$
+    - LeakyReLU: $1$ if $z>0$, some small value if $z<0$.
