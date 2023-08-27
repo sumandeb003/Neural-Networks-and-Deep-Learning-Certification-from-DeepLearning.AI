@@ -5,7 +5,7 @@
 4. **The R, G, B matrices of an image can be unrolled and concatenated in the form of long column matrix. This 1-D matrix can be input features to a NN.**
 5. Dimensional Analysis:
       - **$\color{red}{\textrm{Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer of an NN =}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{X}}$** $\color{red}{1}$ **$\color{red}{\textrm{, where}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{= number of neurons in L-th layer. So,}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{determines the number of rows.}}$**
-      - **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $\color{red}{n(L)}$ **$\color{red}{\textrm{X}}** $\color{red}{n(L-1)}$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
+      - **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $\color{red}{n(L)}$ **$\color{red}{\textrm{X}}$** $\color{red}{n(L-1)}$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
       - **The above vectors - input activation and output of a NN layer - can be concatenated horizontally for all training samples to form columns of a matrix.**
 6.  **Logistic regression is for performing binary classification.** 
     - **Logistic regression is done by a single neuron with sigmoid activation function ($\sigma(z)=1/1+e^{-z}=e^x/e^x+1$; $\sigma(z)$ $\epsilon$ (0,1)).**
