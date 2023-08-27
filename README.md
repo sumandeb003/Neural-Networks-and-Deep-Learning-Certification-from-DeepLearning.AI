@@ -4,5 +4,5 @@
 3.  Replacing the Sigmoid function with ReLU led to significant improvement in learning speed. Once the activation enters the plateau in the sigmoid function, further change in output slows down. But the ReLU has a decent gradient (=1).
 4.  **Logistic regression is an algorithm for binary classification. Logistic regression is done by a single neuron with sigmoid activation function (sigma).** Forward Propagation in logistic regression: $z=w_1x_1+w_2x_2+b$; $y=sigma(z)$;
 5.  **The R, G, B matrices of an image can be unrolled and concatenated in the form of long column matrix. This 1-D matrix can be input features to a NN.**
-6.  **Dimension of the bias matrix -- a vector -- B[L] of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
+6.  **Dimension of the bias matrix - a vector - B[L] of the L-th layer of an NN =** $n(L)$ **X** $1$ **, where** $n(L)$ **= number of neurons in L-th layer. So,** $n(L)$ **determines the number of rows.**
 7.  **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $n(L)$ **X** $n(L-1)$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
