@@ -57,3 +57,12 @@
 18. **Having linear activations or no non-linear activation function (i.e. the output is the activation - $wx+b$ - itself) for the hidden units of a multi-layered NN  =  having a single layer of linear or no activation, i.e., there will be no effect of having multiple neuron layers.** The combination of two or more linear functions is itself a linear function. Such an activation-function-less multi-layered NN - no matter how many layers it has - effectively behaves like a single-layered NN with identity or no activation function whose final output is a linear combination of the input. So, no effect of having multiple layers - in which each layer learns a new and different feature.
     - If we have a multi-layered NN with hidden layers having identity or no activation function and only the output layer having sigmoid activation function, such a NN is no more expressive than a standard logistic regression without any hidden layer.
 
+19. If two or more neurons (in a layer) with same inputs and same output neurons have all their weights  initialised to zeros or same values,  then they will have the same weights even after N number of iterations of the BP.  Random initialization is done to avoid this symmetry between the weights of the neurons.
+
+20. **Weights are initialized to small (random) values to avoid too large or small activations i.e. saturation (leading to slow gradient descent) of neurons with sigmoid or tanh activation functions.**
+21. **The biases are usually initialized to zeros.**
+22. There are 3 main ways of initializing the weights of an NN.
+    - Glorot (Xavier) initialization: suitable for tanh, softmax, and logistic activation functions
+    - He initialization: suitable for ReLU (and its variants) activation function
+    - LeCun initialization: suitable for SELU activation.
+    - Refer to this video for more information: https://www.youtube.com/watch?v=tYFO434Lpm0&list=PLcWfeUsAys2nPgh-gYRlexc6xvscdvHqX&index=9&ab_channel=AssemblyAI
