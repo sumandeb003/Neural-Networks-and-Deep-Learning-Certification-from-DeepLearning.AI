@@ -22,7 +22,7 @@
 7. Gradient descent (GD) works by moving downward toward the pits or valleys in the graph ($J$ vs $w$ vs $b$; $J = f(y_g, y)$; $y_g$: ground truth; $y$: computed output) to find the minimum value.  **The gradient is a vector ($-dJ/dw$) that points in the direction of the steepest INCREASE of the function at a specific point. GD works by moving (step size=LR) in the opposite direction ($-dJ/dw$) of the gradient** allows the algorithm to gradually descend towards lower values of the function, and eventually reaching to the minimum of the function. BTW, "derivative" of a function at a point just means "slope" of the function at that point.
     - **Imagining this slope or gradient vector in a space with 10s of 1000s of dimensions (weights; a network with 784 neurons in 1st layer, 16 neurons in 2nd layer, 16 neurons in 3rd layer and 10 neurons in the final layer has a total of around 13k weights or dimensions) is beyond the perception of the human mind.**
     - Back propagation (BP) is an algorithm for computing gradient descent.
-9. **GD for logistic regression: $\color{red}{w_i=w_i + (LR)(-dJ/dw_i)}$ where, \mathbf{dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)}.**
+9. **GD for logistic regression: $\color{red}{w_i=w_i + (LR)(-dJ/dw_i)}$ where, $\bm{dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)}$.**
     - **Value of $dJ/dw_i$ is different for different training samples - $z$, $y$.**
     - **Average all the values in the training set or in a mini-batch.**
 10. $dy/dz$ for different activation functions(y):
