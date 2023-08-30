@@ -11,7 +11,7 @@
       - **Dimension of the weight matrix W[L] (matrix containing all the weights of all the neurons in the L-th layer) of the L-th layer of an NN =** $\color{red}{n(L)}$ **$\color{red}{\textrm{X}}$** $\color{red}{n(L-1)}$ **. For the 1st layer,** $n(L-1)$ **= number of input features.**
       - **The above vectors - input activation and output of a NN layer - can be concatenated horizontally for all training samples to form columns of a matrix.**
 6.  **Logistic regression is for performing binary classification.** 
-    - **Logistic regression is done by a single neuron with sigmoid activation function ($\sigma(z)=1/1+e^{-z}=e^x/e^x+1$; $\sigma(z)$ $\epsilon$ (0,1)).**
+    - **Logistic regression is done by a single neuron with sigmoid activation function ($\color{red}{\sigma(z)=1/1+e^{-z}=e^x/e^x+1}$; $\sigma(z)$ $\epsilon$ (0,1)).**
       - **Sigmoid function is a probability distribution curve with its output limited to between 0 and 1. It is the probability of the output ($y$) to be 1 for a given $z$.** 
     - **Forward Propagation in logistic regression: $\hat{y}=\sigma(z)$ where, $z=w_1x_1+w_2x_2+b$**
     - **Non-convex optimization => multiple local minima. Squared error is not a suitable loss function for logistic regression because it is non-convex.**
