@@ -38,7 +38,7 @@
     - No. of layers in NN=no. of layers of neurons
     - The inputs to the NN are considered as 0-th layer of activations
 14. Activation functions:
-    - **$tanh(z)$** $= (e^z-e^{-z})/ (e^z+e^{-z})=$**$2\sigma(z) - 1$**
+    - **$\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(z) - 1}$**
         -  **tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
         -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
