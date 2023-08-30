@@ -22,27 +22,22 @@
 7. Gradient descent (GD) works by moving downward toward the pits or valleys in the graph ($J$ vs $w$ vs $b$; $J = f(y_g, y)$; $y_g$: ground truth; $y$: computed output) to find the minimum value.  **The gradient is a vector ($-dJ/dw$) that points in the direction of the steepest INCREASE of the function at a specific point. GD works by moving (step size=LR) in the opposite direction ($-dJ/dw$) of the gradient** allows the algorithm to gradually descend towards lower values of the function, and eventually reaching to the minimum of the function. BTW, "derivative" of a function at a point just means "slope" of the function at that point.
     - **Imagining this slope or gradient vector in a space with 10s of 1000s of dimensions (weights; a network with 784 neurons in 1st layer, 16 neurons in 2nd layer, 16 neurons in 3rd layer and 10 neurons in the final layer has a total of around 13k weights or dimensions) is beyond the perception of the human mind.**
     - Back propagation (BP) is an algorithm for computing gradient descent.
-8. **GD for logistic regression: $\color{red}{w_i=w_i + (LR)(-dJ/dw_i)}$ where, $dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)$.**
+8. **GD for logistic regression: $\color{red}{w_i=w_i + (LR)(-dJ/dw_i)}$ where, $\color{red}{dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)}$.**
     - **Value of $dJ/dw_i$ is different for different training samples - $z$, $y$.**
     - **Average all the values in the training set or in a mini-batch.**
-9. $dy/dz$ for different activation functions(y):
-    - sigmoid function: $z(1-z)$
-    - tanh: $1-z^2$
-    - ReLU: $0$ if $z<0$, $1$ if $z>0$
-    - LeakyReLU: $1$ if $z>0$, some small value if $z<0$.
-10. BP for a single neuron (with two weights $w_1$ and $w_2$) doing logistic regression:  $dJ/dw_1=(dJ/dy)(dy/dz)(dz/dw_1)$ where, $dJ/dy=-(y_g/y)+((1-y_g)/(1-y))$ and $dy/dz=y(1-y)$ and $dz/dw_1=x_1$. Here, $x_1$, $y_g$ are given and $y$ are known from forward propagation. Therefore, $w_1=w_1 + (LR)-dJ/dw1$ can be calculated. Similarly, $w_2$ (using, $dJ/dw_2=x_2(dJ/dz)$) and $b$ (using, $dJ/db=dJ/dz$) can be calculated. $dJ/dz=(dJ/dy)(dy/dz)$ can be calculated as above.
-11. Gradient Descent is of 3 types: `Batch`, `Stochastic`, `Mini-batch`.
+9. BP for a single neuron (with two weights $w_1$ and $w_2$) doing logistic regression:  $\color{red}{dJ/dw_1=(dJ/dy)(dy/dz)(dz/dw_1)}$ where, $\color{red}{dJ/dy=-(y_g/y)+((1-y_g)/(1-y))}$ and $\color{red}{dy/dz=y(1-y)}$ and $\color{red}{dz/dw_1=x_1}$. Here, $x_1$, $y_g$ are given and $y$ are known from forward propagation. Therefore, $w_1=w_1 + (LR)-dJ/dw1$ can be calculated. Similarly, $w_2$ (using, $dJ/dw_2=x_2(dJ/dz)$) and $b$ (using, $dJ/db=dJ/dz$) can be calculated. $dJ/dz=(dJ/dy)(dy/dz)$ can be calculated as above.
+10. Gradient Descent is of 3 types: `Batch`, `Stochastic`, `Mini-batch`.
     - Batch gradient descent averages the errors for each sample in a training set, updating the model only after all training examples have been evaluated.
     - If the weights are updated for each training sample, its stochastic GD (SGD). **Because the coefficients are updated after every training instance, the updates will be noisy jumping all over the place, and so will the corresponding cost function. Its frequent updates can result in noisy gradients, but this can also be helpful in escaping the local minimum and finding the global one.**
         -  SGD often needs a small number of passes through the dataset to reach a good or good enough set of coefficients, e.g. 1-to-10 passes through the dataset.
     - In mini-batch GD, the training set is divided into subsets called mini-batches. The errors for all the samples in a mini-batch are averaged and used to compute the weight updates.The weights are updated with this average error at the end of a batch. This is done for each mini-batch in the training set.
         -  Mini-batch gradient descent combines concepts from both batch gradient descent and stochastic gradient descent. It splits the training dataset into small batch sizes and performs updates on each of those batches. This approach strikes a balance between the computational efficiency of batch gradient descent and the speed of stochastic gradient descent.
-12. My thoughts:  Batch GD is faster compared to  SGD as the weights are updated only once per epoch. In case of multi-layered NNs, it means that backpropagation is done for each training sample. That's time consuming for each epoch.
-13. Whenever possible, avoid using 'for' loops and nested 'for' loops in code. Use Vectors (1-D matrices) instead.
-14. **NN is stacking multiple logistic regression one after another.**
+11. My thoughts:  Batch GD is faster compared to  SGD as the weights are updated only once per epoch. In case of multi-layered NNs, it means that backpropagation is done for each training sample. That's time consuming for each epoch.
+12. Whenever possible, avoid using 'for' loops and nested 'for' loops in code. Use Vectors (1-D matrices) instead.
+13. **NN is stacking multiple logistic regression one after another.**
     - No. of layers in NN=no. of layers of neurons
     - The inputs to the NN are considered as 0-th layer of activations
-15. Activation functions:
+14. Activation functions:
     - **$tanh(z)$** $= (e^z-e^{-z})/ (e^z+e^{-z})=$**$2\sigma(z) - 1$**
         -  **tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
         -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
@@ -53,8 +48,13 @@
         - One disadvantage of ReLU is that it's derivative is 0 for negative $z$, leading to the **dying ReLU problem** and to almost stationary GD i.e., no update of weights and such a dead ReLU outputs only 0. **$\color{red}{\textrm{The gradient for -ve } z \textrm{ is 0 but in practice, enough of the hidden units have }z>0 \textrm{ and so, the learning can still progress well.}}$**
     - To overcome this, we have LeakyReLU ($=(0.01z, z)$) which has a slight slope for negative $z$. 
         - **$\color{red}{\textrm{Leaky ReLU usually works better than ReLU}}$. However, either is fine. Leaky ReLU is not used much in practice.**
-    - **Softmax is another activation function. This function maps the input numbers to output numbers between 0 and 1. This output number is a probability value. Higher the input number (activation), the higher the corresponding probability value. It is used in the output layer of an NN doing multi-class classification.** The output class with the highest probability is considered finally. 
+    - **Softmax is another activation function. This function maps the input numbers to output numbers between 0 and 1. This output number is a probability value. Higher the input number (activation), the higher the corresponding probability value. It is used in the output layer of an NN doing multi-class classification.** The output class with the highest probability is considered finally.
      
+15.. $dy/dz$ for different activation functions(y):
+    - sigmoid function: $z(1-z)$
+    - tanh: $1-z^2$
+    - ReLU: $0$ if $z<0$, $1$ if $z>0$
+    - LeakyReLU: $1$ if $z>0$, some small value if $z<0$
 16. **Having linear activations or no non-linear activation function (i.e. the output is the activation - $wx+b$ - itself) for the hidden units of a multi-layered NN  =  having a single layer of linear or no activation, i.e., there will be no effect of having multiple neuron layers.** The combination of two or more linear functions is itself a linear function. Such an activation-function-less multi-layered NN - no matter how many layers it has - effectively behaves like a single-layered NN with identity or no activation function whose final output is a linear combination of the input. So, no effect of having multiple layers - in which each layer learns a new and different feature.
     - If we have a multi-layered NN with hidden layers having identity or no activation function and only the output layer having sigmoid activation function, such a NN is no more expressive than a standard logistic regression without any hidden layer.
 
@@ -74,4 +74,4 @@
 24. **Functions that can be approximated using** ***a thin, deep NN*** **would require** ***an exponentially fat NN*** **with one hidden layer**. An analogous example would be replacing ''a tree of 2-input XOR gates'' with ''a single hidden layer having an exponentially large number of hidden units''.
 25.  In BP for logistic regression, there is only 1 neuron and the weight and bias updates are calculated using the given inputs($x_1$,$x_2$,...), desired output ($y_g$: ground truth), and the actual output ($y$) computed through forward propagation. In the case of an NN, there are hidden neurons. The actual output of these hidden neurons and their corresponding inputs (outputs of its input neurons) can be computed through forward propagation. The only thing that we don't get in forward propagation is the desired output (ground truth) of these hidden neurons. ***THE GROUND TRUTHS OF THE HIDDEN NEURONS ARE COMPUTED THROUGH BP***. The ground truths of the neurons in the output layer are given in supervised learning.
 26.  
-29.  NumPy is a linear algebra library.
+27.  NumPy is a linear algebra library.
