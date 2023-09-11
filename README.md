@@ -23,6 +23,7 @@
     - **Imagining this slope or gradient vector in a space with 10s of 1000s of dimensions (weights; a network with 784 neurons in 1st layer, 16 neurons in 2nd layer, 16 neurons in 3rd layer and 10 neurons in the final layer has a total of around 13k weights or dimensions) is beyond the perception of the human mind.**
     - Back propagation (BP) is an algorithm for computing gradient descent.
 9. **GD for logistic regression: $\color{red}{w_i=w_i + (LR)(-dJ/dw_i)}$ where, $\color{red}{dJ/dw_i = (dJ/dy)(dy/dz)(dz/dw_i)}$.**
+    - **$dy/dz$ = GRADIENT OF THE ACTIVATION FUNCTION**
     - **Value of $dJ/dw_i$ is different for different training samples - $z$, $y$.**
     - **Average all the values in the training set or in a mini-batch.**
 10. BP for a single neuron (with two weights $w_1$ and $w_2$) doing logistic regression:  $\color{red}{dJ/dw_1=(dJ/dy)(dy/dz)(dz/dw_1)}$ where, $\color{red}{dJ/dy=-(y_g/y)+((1-y_g)/(1-y))}$ and $\color{red}{dy/dz=y(1-y)}$ and $\color{red}{dz/dw_1=x_1}$. Here, $x_1$, $y_g$ are given and $y$ are known from forward propagation. Therefore, $w_1=w_1 + (LR)-dJ/dw1$ can be calculated. Similarly, $w_2$ (using, $dJ/dw_{2}$ $=$ $x_{2}$ $(dJ/dz)$) and $b$ (using, $dJ/db=dJ/dz$) can be calculated. $dJ/dz=(dJ/dy)(dy/dz)$ can be calculated as above.
