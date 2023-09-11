@@ -52,6 +52,7 @@
     - To overcome this, we have LeakyReLU ($\color{red}{=(0.01z, z)}$) which has a slight slope for negative $z$. 
         - **$\color{red}{\textrm{Leaky ReLU usually works better than ReLU}}$. However, either is fine. Leaky ReLU is not used much in practice.**
     - **Softmax is another activation function. This function maps the input numbers to output numbers between 0 and 1. This output number is a probability value. Higher the input number (activation), the higher the corresponding probability value. It is used in the output layer of an NN doing multi-class classification.** The output class with the highest probability is considered finally.
+      - $= e^{x_1}/\sum e^{x_i}$
      
 16. $dy/dz$ for different activation functions(y):
     - sigmoid function: $z(1-z)$
