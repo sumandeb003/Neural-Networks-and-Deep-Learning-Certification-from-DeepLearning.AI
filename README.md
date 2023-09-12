@@ -42,8 +42,9 @@
     - **$\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(z) - 1}$**
         - **SO, $\sigma(x)$ CAN BE RE-SCALED (BY A FACTOR OF 2) AND SHIFTED (BY -1) TO OBTAIN $tanh(x)$. BOTH $tanh(x)$ AND $\sigma(x)$ ARE ESSENTIALLY THE SAME.**
           -  **Since $0 < \sigma(z) < 1$, $-1 < tanh(z) < 1$.**
-        -  **So, tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
-        -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
+        -  **So, tanh is basically a stretched (along y axis) version of logistic regression -  stretched between +1 and -1**
+        -  **$\color{red}{\textrm{tanh FUNCTION ALWAYS WORKS BETTER THAN LOGISTIC REGRESSION.}}$**
+          - **REASON WHY tanh IS BETTER THAN LOGISTIC REGRESSION: The outputs of the tanh function are closer to (or, centered around) 0 on average. The outputs of logistic regression are closer to (or, centered around) 0.5 on an average. "Convergence is usually faster if the average of each input variable over the training set is close to zero." - Yan LeCun. This holds good for all the layers in the network. For hidden layers, the inputs are the outputs of the activation units. So, if the activation units are $tanh$, then the hidden layers can converge faster.** 
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $\color{red}{max(0,z)}$**
