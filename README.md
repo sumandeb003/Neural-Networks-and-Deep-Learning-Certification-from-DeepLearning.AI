@@ -12,7 +12,8 @@
       - **The above vectors - input activation and output of a NN layer - can be concatenated horizontally for all training samples to form columns of a matrix.**
 7.  **Logistic regression is for performing binary classification.** 
     - **Logistic regression is done by a single neuron with sigmoid activation function ($\color{red}{\sigma(z)=1/1+e^{-z}=e^x/e^x+1}$; $\sigma(z)$ $\epsilon$ (0,1)).**
-      - **Sigmoid function is a probability distribution curve with its output limited to between 0 and 1. It is the probability of the output ($y$) to be 1 for a given $z$.** 
+      - **The logistic regression function is a probability distribution curve with its output limited to between 0 and 1. It is the probability of the output ($y$) to be 1 for a given $z$.**
+      - **Any S-shaped function can be called sigmoid function. Logistic regression and $tanh$ are sigmoid functions.**  
     - **Forward Propagation in logistic regression: $\hat{y}=\sigma(z)$ where, $z=w_1x_1+w_2x_2+b$**
     - **Non-convex optimization => multiple local minima. Squared error is not a suitable loss function for logistic regression because it is non-convex.**
     - **Preferred cost function ($J$) for logistic regression: Average of $-[(y_g)(log y)+(1-(y_g))log(1-y)]$ for all training samples. Gradient descent is used to find weights that reduce this cost function.  Here, $y_g$ = ground truth, $y$ = computed output.**
