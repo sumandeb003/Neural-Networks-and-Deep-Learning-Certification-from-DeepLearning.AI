@@ -39,12 +39,12 @@
     - No. of layers in NN=no. of layers of neurons
     - The inputs to the NN are considered as 0-th layer of activations
 15. Activation functions:
-    - **$\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(z) - 1}$**
+    - **$\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(2z) - 1}$**
         - **SO, $\sigma(x)$ CAN BE RE-SCALED (BY A FACTOR OF 2) AND SHIFTED (BY -1) TO OBTAIN $tanh(x)$. BOTH $tanh(x)$ AND $\sigma(x)$ ARE ESSENTIALLY THE SAME.**
           -  **Since $0 < \sigma(z) < 1$, $-1 < tanh(z) < 1$.**
         - **So, tanh is basically a stretched (along y axis) version of logistic regression -  stretched between +1 and -1**
         - **$\color{red}{\textrm{tanh FUNCTION ALWAYS WORKS BETTER THAN LOGISTIC REGRESSION.}}$**
-          - **REASON: The outputs of the tanh function are closer to (or, centered around) 0 on average. The outputs of logistic regression are closer to (or, centered around) 0.5 on an average. "Convergence is usually faster if the average of each input variable over the training set is close to zero." - Yan LeCun. This holds good for all the layers in the network. For hidden layers, the inputs are the outputs of the activation units. So, if the activation units are $tanh$, then the hidden layers can converge faster.** 
+          - **REASON: The outputs of the tanh function are closer to (or, centered around) 0 on average. The outputs of logistic regression are closer to (or, centered around) 0.5 on an average. "Convergence is usually faster if the average of each input variable over the training set is close to zero." - Yan LeCun. It has been long known (LeCun et al., 1998b; Wiesler & Ney, 2011) that the network training converges faster if its inputs are whitened – i.e., linearly transformed to have zero means and unit variances, and decorrelated. This is why you should normalize your inputs so that the average is zero. This heuristic should be applied at all layers which means that we want the average of the outputs of a node to be close to zero because these outputs are the inputs to the next layer. As each layer observes the inputs produced by the layers below, it would be advantageous to achieve the same whitening of the inputs of each layer.  So, if the activation units are $tanh$, then the hidden layers can converge faster.** 
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $\color{red}{max(0,z)}$**
@@ -60,6 +60,7 @@
     - sigmoid function: $z(1-z)$
     - softmax function: $z(1-z)$
     - tanh: $1-z^2$
+      - $\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(2z) - 1 => dtanh(z)/dz = 4d\sigma(z)/dz}$ 
     - ReLU: $0$ if $z<0$, $1$ if $z>0$
     - LeakyReLU: $1$ if $z>0$, some small value if $z<0$
 17. **Having linear activations or no non-linear activation function (i.e. the output is the activation - $wx+b$ - itself) for the hidden units of a multi-layered NN  =  having a single layer of linear or no activation, i.e., there will be no effect of having multiple neuron layers.** The combination of two or more linear functions is itself a linear function. Such an activation-function-less multi-layered NN - no matter how many layers it has - effectively behaves like a single-layered NN with identity or no activation function whose final output is a linear combination of the input. So, no effect of having multiple layers - in which each layer learns a new and different feature.
