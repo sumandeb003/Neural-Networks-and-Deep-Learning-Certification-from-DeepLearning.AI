@@ -40,7 +40,7 @@
     - The inputs to the NN are considered as 0-th layer of activations
 15. Activation functions:
     - **$\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(z) - 1}$**
-        -  **SO, $\sigma(x)$ CAN BE RE-SCALED (BY A FACTOR OF 2) AND SHIFTED (BY -1) TO OBTAIN $tanh(x)$. BOTH $tanh(x)$ AND $\sigma(x)$ ARE ESSENTIALLY THE SAME.**
+        - **SO, $\sigma(x)$ CAN BE RE-SCALED (BY A FACTOR OF 2) AND SHIFTED (BY -1) TO OBTAIN $tanh(x)$. BOTH $tanh(x)$ AND $\sigma(x)$ ARE ESSENTIALLY THE SAME.**
           -  **Since $0 < \sigma(z) < 1$, $-1 < tanh(z) < 1$.**
         -  **So, tanh is basically a stretched (along y axis) version of the sigmoid function -  stretched between +1 and -1**
         -  **$\color{red}{\textrm{tanh function always works better than sigmoid activation}}$**
