@@ -60,7 +60,7 @@
     - sigmoid function: $z(1-z)$
     - softmax function: $z(1-z)$
     - tanh: $1-z^2$
-      - $\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(2z) - 1 => dtanh(z)/dz = 4d\sigma(z)/dz}$ 
+      - $\color{red}{tanh(z)}$ $\color{red}{= (e^z-e^{-z})/ (e^z+e^{-z})=2\sigma(2z) - 1 => tanh'(z) = 4\sigma'(z)}$ 
     - ReLU: $0$ if $z<0$, $1$ if $z>0$
     - LeakyReLU: $1$ if $z>0$, some small value if $z<0$
 17. **Having linear activations or no non-linear activation function (i.e. the output is the activation - $wx+b$ - itself) for the hidden units of a multi-layered NN  =  having a single layer of linear or no activation, i.e., there will be no effect of having multiple neuron layers.** The combination of two or more linear functions is itself a linear function. Such an activation-function-less multi-layered NN - no matter how many layers it has - effectively behaves like a single-layered NN with identity or no activation function whose final output is a linear combination of the input. So, no effect of having multiple layers - in which each layer learns a new and different feature.
