@@ -91,4 +91,5 @@
 ## Doables
 1.  Read paper on Batch Normalization: https://arxiv.org/pdf/1502.03167.pdf
 2.  Read paper on Efficient Backpropagation: http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf
-3.  
+3.  What is Batch Normalization?
+4.  
