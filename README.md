@@ -10,7 +10,7 @@
 def image2vector(image):
     """
     Argument:
-    image -- a numpy array of shape (length, height, depth)
+    image -- a numpy array of shape (length, width, depth)
     
     Returns:
     v -- a vector of shape (length*height*depth, 1)
@@ -24,6 +24,43 @@ def image2vector(image):
     # YOUR CODE ENDS HERE
     
     return v
+
+t_image = np.array([[[ 0.67826139,  0.29380381],
+                     [ 0.90714982,  0.52835647],
+                     [ 0.4215251 ,  0.45017551]],
+
+                   [[ 0.92814219,  0.96677647],
+                    [ 0.85304703,  0.52351845],
+                    [ 0.19981397,  0.27417313]],
+
+                   [[ 0.60659855,  0.00533165],
+                    [ 0.10820313,  0.49978937],
+                    [ 0.34144279,  0.94630077]]])
+
+print ("image2vector(image) = " + str(image2vector(t_image)))
+
+image2vector_test(image2vector)
+
+#Output:
+
+image2vector(image) = [[0.67826139]
+ [0.29380381]
+ [0.90714982]
+ [0.52835647]
+ [0.4215251 ]
+ [0.45017551]
+ [0.92814219]
+ [0.96677647]
+ [0.85304703]
+ [0.52351845]
+ [0.19981397]
+ [0.27417313]
+ [0.60659855]
+ [0.00533165]
+ [0.10820313]
+ [0.49978937]
+ [0.34144279]
+ [0.94630077]]
 ```
 6. Dimensional Analysis:
       - **$\color{red}{\textrm{Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer
