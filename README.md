@@ -86,7 +86,10 @@
     - **BP is all about chain rule. In BP, some of the components of the chain rule are stored or cached as they are calculated first. These cached components are the gradients $dz_{i+1}/dx_i$, $dy_{i+1}/dz_{i+1}$ of the later or deeper layers that are traversed first in BP.**
 27. The **BEST-EVER EXPLANATION OF THE VANISHING GRADIENT PROBLEM**: https://www.youtube.com/watch?v=ncTHBi8a9uA&t=903s&ab_channel=ritvikmath
 28. NumPy is a linear algebra library.
-29. In Python, we rarely use the "math" library in deep learning because the inputs of the functions are real numbers. In deep learning we mostly use matrices and vectors. This is why numpy is more useful.
+29. We rarely use the "math" library of Python for deep learning because the inputs of the functions are real numbers. In deep learning, we mostly use matrices and vectors. This is why Numpy is more useful.
+30. Sigmoid function on a matrix or vector `X`: `s = 1 / (1 + np.exp(-x))
+31. Gradient (`ds/dx`) of the sigmoid function `s` with respect to its input `X`: `ds = s * (1 - s)`
+32. 
 
 ## Doables
 1.  Read paper on Batch Normalization: https://arxiv.org/pdf/1502.03167.pdf
