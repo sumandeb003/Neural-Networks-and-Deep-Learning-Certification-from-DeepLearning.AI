@@ -104,7 +104,31 @@ image2vector(image) = [[0.67826139]
         - **$\color{red}{\textrm{tanh FUNCTION ALWAYS WORKS BETTER THAN LOGISTIC REGRESSION.}}$**
           - **REASON: The outputs of the tanh function are closer to (or, centered around) 0 on average. The outputs of logistic regression are closer to (or, centered around) 0.5 on an average. "Convergence is usually faster if the average of each input variable over the training set is close to zero." - Yan LeCun. It has been long known (LeCun et al., 1998b; Wiesler & Ney, 2011) that the network training converges faster if its inputs are whitened – i.e., linearly transformed to have zero means and unit variances, and decorrelated. This is why you should normalize your inputs so that the average is zero. This heuristic should be applied at all layers which means that we want the average of the outputs of a node to be close to zero because these outputs are the inputs to the next layer. As each layer observes the inputs produced by the layers below, it would be advantageous to achieve the same whitening of the inputs of each layer.  So, if the activation units are $tanh$, then the hidden layers can converge faster.**
           - centered around zero is nothing but mean of the input data is around zero.
+```python
+def normalize_rows(x):
+    """
+    Implement a function that normalizes each row of the matrix x (to have unit length).
+    
+    Argument:
+    x -- A numpy matrix of shape (n, m)
+    
+    Returns:
+    x -- The normalized (by row) numpy matrix. You are allowed to modify x.
+    """
+    
+    #(≈ 2 lines of code)
+    # Compute x_norm as the norm 2 of x. Use np.linalg.norm(..., ord = 2, axis = ..., keepdims = True)
+    # x_norm =
+    # Divide x by its norm.
+    # x =
+    # YOUR CODE STARTS HERE
+    x_norm = np.linalg.norm(x, ord=2, axis=1, keepdims=True)
+    x = x / x_norm
+    
+    # YOUR CODE ENDS HERE
 
+    return x
+```
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $\color{red}{max(0,z)}$**
