@@ -104,6 +104,29 @@ image2vector(image) = [[0.67826139]
         - **$\color{red}{\textrm{tanh FUNCTION ALWAYS WORKS BETTER THAN LOGISTIC REGRESSION.}}$**
           - **REASON: The outputs of the tanh function are closer to (or, centered around) 0 on average. The outputs of logistic regression are closer to (or, centered around) 0.5 on an average. "Convergence is usually faster if the average of each input variable over the training set is close to zero." - Yan LeCun. It has been long known (LeCun et al., 1998b; Wiesler & Ney, 2011) that the network training converges faster if its inputs are whitened – i.e., linearly transformed to have zero means and unit variances, and decorrelated. This is why you should normalize your inputs so that the average is zero. This heuristic should be applied at all layers which means that we want the average of the outputs of a node to be close to zero because these outputs are the inputs to the next layer. As each layer observes the inputs produced by the layers below, it would be advantageous to achieve the same whitening of the inputs of each layer.  So, if the activation units are $tanh$, then the hidden layers can converge faster.**
           - centered around zero is nothing but mean of the input data is around zero.
+          - by normalization we mean changing x to $ \frac{x}{\| x\|} $ (dividing each row vector of x by its norm). For example, if 
+$$x = \begin{bmatrix}
+        0 & 3 & 4 \\
+        2 & 6 & 4 \\
+\end{bmatrix}\tag{3}$$ 
+then 
+$$\| x\| = \text{np.linalg.norm(x, axis=1, keepdims=True)} = \begin{bmatrix}
+    5 \\
+    \sqrt{56} \\
+\end{bmatrix}\tag{4} $$
+and
+$$ x\_normalized = \frac{x}{\| x\|} = \begin{bmatrix}
+    0 & \frac{3}{5} & \frac{4}{5} \\
+    \frac{2}{\sqrt{56}} & \frac{6}{\sqrt{56}} & \frac{4}{\sqrt{56}} \\
+\end{bmatrix}\tag{5}$$ 
+
+Note that you can divide matrices of different sizes and it works fine: this is called broadcasting and you're going to learn about it in part 5.
+
+With `keepdims=True` the result will broadcast correctly against the original x.
+
+`axis=1` means you are going to get the norm in a row-wise manner. If you need the norm in a column-wise way, you would need to set `axis=0`. 
+
+numpy.linalg.norm has another parameter `ord` where we specify the type of normalization to be done (in the exercise below you'll do 2-norm). To get familiar with the types of normalization you can visit [numpy.linalg.norm](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
         -  **sigmoid activation is always used in the output layer of a binary classification network because the output can only be 0/1. Never use it in any other case.**
     - **$\color{red}{\textrm{One disadvantage of both sigmoid and tanh activation functions is that when the  activations are too large or small, the gradient (dy/dz) get almost 0, thereby making the GD slow.}}$** Remember: $dJ/dw_i=(dJ/dy)(dy/dz)(dz/dw_i)$
     - One of the most popular activation functions: **ReLU = $\color{red}{max(0,z)}$**
