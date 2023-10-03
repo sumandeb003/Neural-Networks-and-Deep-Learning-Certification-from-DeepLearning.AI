@@ -5,6 +5,26 @@
 3. **Only large NNs (=> large number of layers and weights) trained on large data show remarkably improved performance compared to small NNs trained on little data. Traditional learning algos like RFs, SVMs, linear regression may show better performance than small NNs trained on little data depending on feature engineering, parameter tuning etc. Training large NNs on large data became possible ONLY with large hardware like GPUs.** Prior to GPUs, it was not possible to train large NNs on large data and only small NNs could be trained on small data. These small NNs trained on small data didn't show any remarkable performance compared to traditional learning algos. So, traditionally, NNs were not considered attractive.
 4.  Replacing the Sigmoid function with ReLU led to significant improvement in learning speed. Once the activation enters the plateau in the sigmoid function, further change in output slows down. But the ReLU has a decent gradient (=1).
 5. **The R, G, B matrices of an image can be unrolled and concatenated in the form of long column matrix. This 1-D matrix can be input features to a NN.**
+      - In computer science, an image is represented by a 3D array of shape (length,width,depth=3). However, when you read an image as the input of an algorithm you convert it to a vector of shape (length∗width∗3,1). In other words, you "unroll", or reshape, the 3D array into a 1D vector.
+```python
+def image2vector(image):
+    """
+    Argument:
+    image -- a numpy array of shape (length, height, depth)
+    
+    Returns:
+    v -- a vector of shape (length*height*depth, 1)
+    """
+    
+    # (≈ 1 line of code)
+    # v =
+    # YOUR CODE STARTS HERE
+    v = image.reshape((image.shape[0] * image.shape[1] * image.shape[2], 1))
+    
+    # YOUR CODE ENDS HERE
+    
+    return v
+```
 6. Dimensional Analysis:
       - **$\color{red}{\textrm{Dimension of the bias matrix (a vector) B[L], the activation (input) matrix and the output matrix of the L-th layer
  of an NN =}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{X}}$** $\color{red}{1}$ **$\color{red}{\textrm{, where}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{= number of neurons in L-th layer. So,}}$** $\color{red}{n(L)}$ **$\color{red}{\textrm{determines the number of rows.}}$**
