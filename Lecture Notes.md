@@ -167,7 +167,7 @@ def normalize_rows(x):
 27. The **BEST-EVER EXPLANATION OF THE VANISHING GRADIENT PROBLEM**: https://www.youtube.com/watch?v=ncTHBi8a9uA&t=903s&ab_channel=ritvikmath
 28. NumPy is a linear algebra library.
 29. We rarely use the "math" library of Python for deep learning because the inputs of the functions are real numbers. In deep learning, we mostly use matrices and vectors. This is why Numpy is more useful.
-30. Sigmoid function on a matrix or vector `X`: `s = 1 / (1 + np.exp(-x))
+30. Sigmoid function on a matrix or vector `X`: `s = 1 / (1 + np.exp(-x))`
 31. Gradient (`ds/dx`) of the sigmoid function `s` with respect to its input `X`: `ds = s * (1 - s)`
 32. 
 
